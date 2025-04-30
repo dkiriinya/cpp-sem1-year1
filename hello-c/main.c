@@ -1,17 +1,13 @@
-// Online C compiler to run C program online
 #include <stdio.h>
-// create 3 variables as follows. Length Width Area
-int Length,Width,Area;
-int main() {
-    // Write C code here
-     printf("Enter the length: ");
-    scanf( "%d", &Length);
-    printf("Enter the width: ");
-    scanf("%d", &Width);
-
-    Area = Length * Width;
-
-    printf("The area of a rectangle is: %d",Area);
-
+int main(void) {
+    char s[20];
+    FILE *f = fopen("data", "w");
+    int i = fputs("1248", f);
+    fclose(f);
+    f = fopen("data", "r");
+    fgets(s + 2, 4, f);
+    putchar(s[4]);
+    fclose(f);
     return 0;
 }
+
